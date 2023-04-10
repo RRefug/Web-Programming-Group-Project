@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id = "GenreContainer" > 
+
+        <h1 style = "color: white"> Genre Type</h1>
+
+        <img src = "Pop.webp" height = "400px" width = "100%"> 
+
+    </div>
+
+    <br>
+
+    <div id = "CMB">
+        <h2 style = "color: white"> Community MessageBoard </h2>
+    </div>
+
+    <div id = "Add">
+        <h2 style = "color: white"> Add Post</h2>
+    </div>
+
+    <br>
+
+
+    <!-- We want to have every post placed inside the scroll wheel area.-->
+    <div class = "scrollContainer">
+    <!--This container will hold one post-->
+    <div class = "postContainer" > 
+        <div class = "ProfilePicContainer" >
+            <img class = "UserPic" src = "SpotifyDefaultProfilePic.jfif"/> 
+        </div>
+
+        <h3 id = "post"> Post Title </h3>
+
+        <div id = "postContentContainer" > <p>Post Content</p></div>
+
+        <div id = "postLike" > <p>Like</p> </div>
+
+        <div id = "postReply" > <p> Reply</p> </div>
+    </div>
+
+
+    <!-- I copied and pasted the same stuff, wow!! It works to make another post!-->
+    <div class = "postContainer" > 
+        <div class = "ProfilePicContainer" >
+            <img class = "UserPic" src = "SpotifyDefaultProfilePic.jfif"/> 
+        </div>
+
+        <h3 id = "post"> Post Title </h3>
+
+        <div id = "postContentContainer" > <p>Post Content</p></div>
+
+        <div id = "postLike" > <p>Like</p> </div>
+
+        <div id = "postReply" > <p> Reply</p> </div>
+    </div>
+
+    <!-- This is the scroll wheel container-->
+    </div>
+    
+
+    
+
+
+</body>
+
+<style type = "text/css">
+
+    .postContainer{
+        width: 700px;
+        height: 200px;
+
+        margin-top: 50px;
+        border: 2px solid;
+        border-color: black;
+        background-image: linear-gradient(white,grey);
+        position: relative;  /*Allows the profile image to stay on top*/
+    }
+
+    .ProfilePicContainer{
+        width: 80px;
+        height: 80px;
+
+        /*background-color: red;*/
+        position: absolute; /*Does not allow the profile pic to go further than the post container. Allows it to stay on top of it. */
+
+        right: 20px; /*Not the amount of pixels we going to the right, where we want it. */
+        top: 10px;
+    }
+
+    .UserPic{
+        object-fit: cover;
+        object-position: center center;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%; /*This allows us to make a round icon*/
+    }
+
+    #post{
+        height: 25px;
+        width: 200px;
+
+        background-color: orange;
+        position: absolute;
+        text-align: center;
+
+        left: 10px;
+    }
+
+
+    #postContentContainer{
+        height: 70px;
+        width: 300px;
+
+        text-align: center;
+        background-color: pink;
+        position: absolute;
+
+        left: 10px;
+        bottom: 30px;;
+    }
+
+    #postLike{
+        width: 70px;
+        height: 10px;
+
+        text-align: center;
+        background-color: lightblue;
+        padding-bottom: 30px;
+        position: absolute;
+
+        right: 100px;
+        bottom: 10px;
+        border-radius: 7%;
+    }
+
+    p{
+        padding-top: 5px;
+        position: absolute;
+        bottom: 10px;
+        left: 7px;
+        
+    }
+
+    #postReply{
+        width: 70px;
+        height: 10px;
+
+        text-align: center;
+        padding-bottom: 30px;
+        background-color: yellow;
+        position: absolute;
+
+        right: 10px;
+        bottom: 10px;
+        border-radius: 7%;
+    }
+
+    #CMB{
+        width: 300px;
+        height: 50px;
+        
+        border-radius: 25px;
+        border: 1px solid;
+        border-color: white;
+        padding-bottom: 15px;
+        
+        background-color: green;
+        position: fixed;
+        left: 100px;
+    }
+
+    #Add{
+        height: 50px;
+        width: 300px;
+
+        border-radius: 25px;
+        border: 1px solid;
+        border-color: white;
+        padding-bottom: 15px;
+
+        background-color: black;
+        position: fixed;
+        right: 100px;
+        
+    }
+
+    h2{
+        text-align: center;
+    }
+    
+    /* I have to apply the gradient to the entire document, so i do html instead of body*/
+    html{
+        height: 100%;
+        background-image: linear-gradient(#07301e,black);
+    }
+
+
+
+
+
+    .scrollContainer {
+        border: none;
+        font: 24px/36px sans-serif;
+        width: 900px;
+        height: 350px;
+        overflow-y: scroll; /* We only give the vertical scroll wheel*/
+
+        background-color: black;
+
+        margin-top: 120px;
+        position: relative; 
+        bottom: 50px;
+    }
+
+
+
+
+
+
+
+</style>
+
+
+
+</html>

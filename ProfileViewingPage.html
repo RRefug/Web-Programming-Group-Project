@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Viewing Page</title>
+</head>
+<body>
+
+
+    <!-- This is the container of the user section! Will have all elements stored in it.-->
+    <div id = "UserBiographyContainer"> 
+        <div id = "ProfilePicContainer"> 
+            <img id = "ProfilePic" src = "SpotifyDefaultProfilePic.jfif">
+        </div>
+
+        <div id = "threeDotsContainer">
+            <img id = "threeDots" src = "png-transparent-three-dots-multimedia-solid-px-icon-thumbnail.png">
+        </div>
+        
+
+        <summary id = "userBio">
+
+            User Biography
+
+        </summary>
+
+        <h2 id = "userName"> Username </h2>
+    </div>
+
+
+
+    <br>
+
+
+    <div id = "Fav1Container"> <h1> Favorite Artists </h1> </div>
+
+    <div id = "Fav2Container"> <h1> Favorite Songs </h1></div>
+
+    <div id = "Fav3Container"> <h1> Favorite Genres </h1></div>
+
+    <br>
+
+    <!--This is the parent container, 3 tables are child--> 
+    <div id = "parent1">
+    <!-- This is the table for the favorite Artists-->
+    <table id = "FavoriteArtists" Border = "1"> 
+        <caption id = "title"> Favorite Artists </caption>
+        <tr> 
+            <td> <img src = "TheWeekendPic.jpg" width = "200px" height = "200px"> <br> <text style = "text-align: center;"> The Weekend </text> </td>
+            <td> <img src = "Tame Impala.jfif" width = "200px" height = "200px"> <br> <text style = "text-align: center;"> Tame Impala </text> </td>
+        </tr>
+    </table> 
+    </div>
+
+    <div id = "parent2">
+    <!-- This is the table for the favorite songs-->
+    <table id = "FavoriteSongs" Border = "1"> 
+        <caption id = "title"> Favorite Songs </caption>
+        <tr> 
+            <td id = "SongName" >The Weekend - Blinding Lights </td>
+        </tr>
+
+        <tr> 
+            <td id = "SongName"> John Denvor - Take Me Home, Country Roads</td>
+        </tr>
+
+        <tr> 
+            <td id = "SongName">  MF DOOM - PotHolderz (feat. Count Bass D)</td>
+        </tr>
+    </table>
+    </div>
+
+    <div id = "parent3">
+    <!-- This is the table for the favorite Genres-->
+    <table id = FavoriteGenres Border = "1"> 
+        <caption id = "title"> Favorite Genres </caption>
+        <tr> 
+            <td> Rock  </td> 
+        </tr>
+
+        <tr> 
+            <td> Blues </td>
+        </tr>
+    </table>
+
+    </div>
+
+</body>
+
+<!-- This is where I do the CSS rules and properties for the ids. -->    
+<style type = "text/css">
+
+    
+    #UserBiographyContainer{
+        height: 400px;
+        width: 1550px;
+
+        background-image: linear-gradient(grey, black);
+        margin-left: 25px;
+        margin-top: 50px;
+        position: relative;
+    }
+    
+    
+    #ProfilePicContainer{
+        height: 300px;
+        width: 300px;
+
+        /*background-color: red;*/
+        position: relative;
+
+        top: 10px;
+        left: 10px;
+    }
+
+    #ProfilePic{
+        object-fit: cover;
+        object-position: center center;
+
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+    }
+    
+    #threeDotsContainer{
+        height: 50px;
+        width: 50px;
+
+        /*background-color: red;*/
+        position: absolute;
+
+        top: 10px;
+        right: 10px;
+    }
+    
+    #threeDots{
+        height: 100%;
+        width: 100%;
+
+        border-radius: 50%;
+    }
+    
+    #userBio{
+        height: 250px;
+        width: 1000px;
+
+        text-align: center;
+        font-size: x-large;
+        color:white;
+        padding-top: 50px;
+        background-color: black;
+        position: absolute;
+
+        left: 30%;
+        top: 20px;
+    }
+
+    #userName{
+        height: 50px;
+        width: 200px;
+
+        text-align: center;
+        color:white;
+        background-color: black;
+        padding-top: 15px;
+
+        position: absolute;
+        left: 55px;
+        bottom: 10px;
+    }
+
+
+
+    #Fav1Container{
+        display: inline-block;
+        background-color: black;
+        border: 2px solid;
+        /*border-color: grey;*/
+
+        width: 300px;
+        height: 75px;
+
+        margin-top: 75px;
+        position: absolute;
+        left: 8%;   
+    }
+    #Fav2Container{
+        display: inline-block;
+        background-color: black;
+        border: 2px solid;
+        /*border-color: grey; */
+
+        width: 300px;
+        height: 75px;
+
+        margin-top: 75px;
+        position: absolute;
+        left: 39%;
+
+        margin-right: 100px;
+    }
+    #Fav3Container{
+        display: inline-block;
+        background-color: black;
+        border: 2px solid;
+        /*border-color: grey;*/
+
+        width: 300px;
+        height: 75px;
+
+        margin-top: 75px;
+        position: absolute;
+        right: 7%;
+
+        margin-right: 100px;
+    }
+
+
+    
+
+    #parent1{
+        display: inline-block;
+        background-color: green;
+        margin-top: 150px;
+        margin-left: 25px;
+    }
+    
+    #FavoriteArtists{    
+        display: inline-block;
+        background-image: linear-gradient(grey, black);
+        height: 250px;
+        width: 500px;
+    } 
+    
+    #parent2{
+        display: inline-block;
+        background-color: green;
+        margin-top: 150px;
+        margin-left: 25px;
+
+        width: 500px
+    }
+    
+    #FavoriteSongs{
+        display: inline-block;
+        background-image: linear-gradient(grey, black);
+        height: 250px;
+        width: 100%;
+    } 
+    
+    #parent3{
+        display: inline-block;
+        background-color: green; 
+        margin-top: 150px;
+        margin-left: 25px;
+    }
+    
+    #FavoriteGenres{
+        display: inline-block;
+        background-image: linear-gradient(grey, black);
+        height: 250px;
+        width: 500px;
+    } 
+    
+    
+
+
+    #title{
+        background-color: #1db954;
+        width: 100%;
+    }
+       
+    
+    #SongName{
+        background-color: dimgray; 
+        width: 100%;    
+    }
+    
+    tr{
+        background-color: pink;
+        width: max-content;
+    }
+    
+    td{
+        background-color: grey;
+        width: max-content;
+    }
+    
+    /*
+    body{
+        background-color: white;
+    }
+    */
+    
+    table{
+        text-align: center;            
+    }
+    
+    h1{
+        color:white;
+        text-align: center;
+    }
+
+
+    html{
+        height: 100%;
+        background-image: linear-gradient(#07301e,black);
+    }
+    </style>
+</html>
