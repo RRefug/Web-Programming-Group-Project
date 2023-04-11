@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Settings</title>
+    <style>
+      .userSettingsHeader {
+        padding: 1px;
+        background-color: whitesmoke;
+        width: 100%;
+      }
+      
+      .container {
+        display: flex;
+        flex-direction: row;
+      }
+
+      nav {
+        background-color: #333;
+        height: 100vh;
+        width: 15%;
+        padding: 1rem;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+      }
+
+      .content-header {
+        background-color: whitesmoke;
+        width: 100%;
+        margin-top: 1px;
+        padding: 1px;
+        height: 100%;
+      }
+
+      nav button {
+        font-size: 24px;
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav>
+        <button style="display: block; width: 100%; margin-bottom: 0.5rem;">Blocked Users</button>
+        <button style="display: block; width: 100%; margin-bottom: 0.5rem;">Theme</button>
+        <button style="display: block; width: 100%; margin-bottom: 0.5rem;">Sign Out</button>
+      </nav>
+
+      <div class="content">
+        <div class="userSettingsHeader">
+          <center><h1>User Settings</h1></center>
+        </div>
+
+        <div class="content-header">
+          <p>Welcome to your user settings page. Here you can customize your blocked users/theme/sign out settings.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
