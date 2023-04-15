@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spotify Chat - Login</title>
+    <style>
+    body {
+        background-color: #1DB954;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+        margin: 100px auto;
+        max-width: 400px;
+        padding: 30px;
+        text-align: center;
+      }
+      
+      h1 {
+        color: #191414;
+        font-size: 40px;
+        margin-bottom: 30px;
+      }
+      
+      label {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 10px;
+        text-align: left;
+      }
+      
+      input[type=text], input[type=password] {
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
+        padding: 10px;
+        margin-bottom: 20px;
+        width: 100%;
+      }
+      
+      button[type=submit] {
+        background-color: #1DB954;
+        border: none;
+        border-radius: 25px;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 10px 20px;
+        transition: background-color 0.2s;
+        width: 100%;
+      }
+    
+    
+      </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>ListenersLikeMe</h1>
+      <form action="HomePage.html">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </body>
+</html>

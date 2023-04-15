@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spotify Application Home</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom, #17e35f, #191414);
+        background-size: cover;
+        background-attachment: fixed;
+      }
+
+      #header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #1db954;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      #container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: 50px;
+        margin-left: 50px;
+     }
+
+      .button {
+        background-color: #17e35f;
+        color: white;
+        padding: 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        cursor: pointer;
+      }
+
+      #welcome-message {
+        margin-top: 50px;
+        text-align: center;
+        font-size: 45px;
+        font-weight: bold;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <span>ListenersLikeMe</span>
+      <span>User Name</span>
+    </div>
+    <div id="container">
+      <button class="button" onclick="window.location.href='GenreForumPage.html'">Community Forum Page</button>
+      <button class="button" onclick="window.location.href='FriendsPage.html'">Friends Page</button>
+      <button class="button" onclick="window.location.href='UserSettingsPage.html'">Settings Page</button>
+      <button class="button" onclick="window.location.href='ProfileViewingPage.html'">User Viewing Page</button>
+    </div>
+    <div id="welcome-message">
+      <p>Welcome to Your Page</p>
+    </div>
+  </body>
+</html>
