@@ -5,30 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Viewing Page</title>
+    <script type = "text/javascript" src = "Profile.js"> </script>
 </head>
 <body>
 
-
+    <input type = "hidden" id = 'hidden_token'>
     <!-- This is the container of the user section! Will have all elements stored in it.-->
     <div id = "UserBiographyContainer"> 
         <div id = "ProfilePicContainer"> 
             <img id = "ProfilePic" src = "SpotifyDefaultProfilePic.jfif">
         </div>
 
-        <div id = "threeDotsContainer">
-            <img id = "threeDots" src = "png-transparent-three-dots-multimedia-solid-px-icon-thumbnail.png">
-        </div>
         
+        <!-- This is the 3 dot!!! -->
+        <div id = "threeDotsContainer">
+        
+            <!-- 3 dot drop down menu -->
+            <div class = "dropdown">
+                <button class = "dropbtn"> <img id = "threeDots" src = "png-transparent-three-dots-multimedia-solid-px-icon-thumbnail.png"> </button>
+
+                <div class = "dropdown-content">
+                    <a href= "#"> Add As A Friend</a>
+                    <a href = "#"> UnFriend </a>
+                    <a href = "#"> Block </a>
+                </div>
+            </div>
+            <!--End of drop down menu-->
+        </div>
 
         <summary id = "userBio">
 
             User Biography
 
         </summary>
+        
+        <h2 id = "userName"> Username </h2> <!-- Irrelevant-->
+        
 
-        <h2 id = "userName"> Username </h2>
+        <!--Make an API call! -->
+          <!--Everytime we have an ap call that runs a different operation, you can only do one js file for each api call. Only one API function per js file. -->
     </div>
-
+    </input>
 
 
     <br>
@@ -133,6 +150,7 @@
 
         top: 10px;
         right: 10px;
+        border-radius: 50%;
     }
     
     #threeDots{
@@ -162,8 +180,8 @@
         width: 200px;
 
         text-align: center;
-        color:white;
-        background-color: black;
+        
+        background-color: white;
         padding-top: 15px;
 
         position: absolute;
@@ -302,6 +320,58 @@
         color:white;
         text-align: center;
     }
+
+
+
+
+    .droppbtn{
+        background-color: white;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        border-radius: 50%;
+    }
+
+
+    .dropdown-content{
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+        
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+        border-radius: 50%;
+    }
+
+
 
 
     html{
