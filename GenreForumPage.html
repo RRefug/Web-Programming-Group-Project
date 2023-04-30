@@ -30,38 +30,21 @@
 
 
     <!-- We want to have every post placed inside the scroll wheel area.-->
-    <div class = "scrollContainer">
+    <div id = "scrollContainer">
     <!--This container will hold one post-->
-    <div class = "postContainer" > 
-        <div class = "ProfilePicContainer" >
-            <img class = "UserPic" src = "SpotifyDefaultProfilePic.jfif"/> 
-        </div>
+        <!--<div class = "postContainer" > -->
+          <!--  <div class = "ProfilePicContainer" > -->
+              <!--  <img class = "UserPic" src = "SpotifyDefaultProfilePic.jfif"/> -->
+            <!--</div> -->
 
-        <h3 id = "post"> Post Title </h3>
+            <!--<h3 id = "post"> Post Title </h3>-->
 
-        <div id = "postContentContainer" > <p>Post Content</p></div>
+            <!--<div id = "postContentContainer" > <p>Post Content</p></div>-->
 
-        <div id = "postLike" > <p>Like</p> </div>
+            <!--<div id = "postLike" > <p>Like</p> </div>-->
 
-        <div id = "postReply" > <p> Reply</p> </div>
-    </div>
-
-
-    <!-- I copied and pasted the same stuff, wow!! It works to make another post!-->
-    <div class = "postContainer" > 
-        <div class = "ProfilePicContainer" >
-            <img class = "UserPic" src = "SpotifyDefaultProfilePic.jfif"/> 
-        </div>
-
-        <h3 id = "post"> Post Title </h3>
-
-        <div id = "postContentContainer" > <p>Post Content</p></div>
-
-        <div id = "postLike" > <p>Like</p> </div>
-
-        <div id = "postReply" > <p> Reply</p> </div>
-    </div>
-
+            <!--<div id = "postReply" > <p> Reply</p> </div> -->
+        <!--</div>-->
     <!-- This is the scroll wheel container-->
     </div>
     
@@ -107,7 +90,7 @@
         height: 25px;
         width: 200px;
 
-        background-color: orange;
+        /*background-color: darkgrey;*/
         position: absolute;
         text-align: center;
 
@@ -119,8 +102,8 @@
         height: 70px;
         width: 300px;
 
-        text-align: center;
-        background-color: pink;
+        /*text-align: center;*/
+        background-color: white;
         position: absolute;
 
         left: 10px;
@@ -155,7 +138,8 @@
 
         text-align: center;
         padding-bottom: 30px;
-        background-color: yellow;
+        background-image: URL("");
+        /*background-color: yellow;*/
         position: absolute;
 
         right: 10px;
@@ -173,7 +157,7 @@
         padding-bottom: 15px;
         
         background-color: green;
-        position: fixed;
+        position: absolute;
         left: 100px;
     }
 
@@ -188,7 +172,7 @@
 
         color: black;
         background-color: white;
-        position: fixed;
+        position: absolute;
         right: 100px;
         
     }
@@ -208,7 +192,7 @@
 
 
 
-    .scrollContainer {
+    #scrollContainer {
         border: none;
         font: 24px/36px sans-serif;
         width: 900px;
@@ -222,14 +206,65 @@
         bottom: 50px;
     }
 
-
-
-
-
-
-
 </style>
-
-
-
 </html>
+
+
+
+
+<!-- This is going to be a function -->
+<script> 
+
+
+const postC = document.getElementById("Add");
+
+postC.addEventListener("click", createPost);
+
+
+// Function will accept the query number of userId 
+function createPost(databasePostCount){
+
+    window.alert("U PUSHED THE BUTTON!!!");
+
+    for(var i = 0; i < 10; i++){
+        //document.write("<div class = 'ProfilePicContainer'><img class = 'UserPic' src = 'SpotifyDefaultProfilePic.jfif'/></div><h3 id = 'post'> Post Title </h3><div id = 'postContentContainer' > <p>Post Content</p></div><div id = 'postLike' > <p>Like</p> </div> <div id = 'postReply'><p> Reply</p> </div>");
+
+        // THIS CREATES THE POST
+        // Get a reference to the scroll container element 
+        var scrollContainer = document.getElementById("scrollContainer");
+
+        // Create a new div element
+        var pContainer = document.createElement("div");
+
+        // Set some content for the newDiv
+        pContainer.innerHTML = "<div class = 'postContainer'> <div class = 'ProfilePicContainer'><img class = 'UserPic' src = 'SpotifyDefaultProfilePic.jfif'/></div><h3 id = 'post'> Post Title </h3><div id = 'postContentContainer' > <p>Post Content</p></div><div id = 'postLike' > <p>Like</p> </div> <div id = 'postReply'><p> Reply</p> </div> </div>";
+
+        // Add the new div to the container
+        scrollContainer.appendChild(pContainer);
+
+
+        // THIS SECTION POPLATES THE POST TITLE
+        // Get a reference to the post title container
+        var postTitleContainer = document.getElementById("post");
+
+        postTitleContainer.innerHTML = "DABABY";
+        
+
+        // THIS SECTION POPULATES THE POST CONTENT
+        var postContentContainer = document.getElementById("postContentContainer");
+
+        postContentContainer.innerHTML = "He turns into a car!!";
+
+
+        //THIS SECTION POPULATES THE USER IMAGE
+        
+
+
+
+
+    }
+    
+}
+
+
+</script>
