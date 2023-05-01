@@ -49,7 +49,32 @@
     </div>
     
 
-    
+    <form id = "AddPostForm">
+        <table style = "width: 98%; height: 100%; box-sizing: border-box;">
+
+            <tr style = "height: 7%">
+                <td colspan="2">
+                    <input type="text" id="postTitleField" value="Post Title">
+                </td>
+            </tr>
+
+            <tr style = "height: 78%">
+                <td colspan="2">
+                    <textarea id="postContentField">Post Content</textarea>
+                </td>
+            </tr>
+
+            <tr style = "height: 15%">
+                <td>
+                    <button id="cancelPostButton">Cancel</button>
+                </td>
+                <td>
+                    <input type="submit" id="submitPostButton" value="Submit">
+                </td>
+            </tr>
+
+        </table>
+    </form>
 
 
 </body>
@@ -107,7 +132,7 @@
         position: absolute;
 
         left: 10px;
-        bottom: 30px;;
+        bottom: 30px;
     }
 
     #postLike{
@@ -175,6 +200,7 @@
         position: absolute;
         right: 100px;
         
+        cursor: pointer;
     }
 
     h2{
@@ -189,8 +215,41 @@
     }
 
 
+    #AddPostForm{
+        display: none;
+        height: 600px;
+        width: 400px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: darkgray;
+    }
 
+    #postTitleField{
+        width: 100%;
+        height: 100%;
+        font-size: 20px;
+    }
 
+    #postContentField{
+        width: 100%;
+        height: 100%;
+        font-size: 20px;
+        resize: none;
+    }
+
+    #submitPostButton{
+        width: 100%;
+        height: 100%;
+        font-size: 20px;
+    }
+
+    #cancelPostButton{
+        width: 100%;
+        height: 100%;
+        font-size: 20px;
+    }
 
     #scrollContainer {
         border: none;
@@ -215,18 +274,39 @@
 <!-- This is going to be a function -->
 <script> 
 
+    const addPostForm = document.getElementById("AddPostForm");
+    const addPostButton = document.getElementById("Add");
+    const cancelPostButton = document.getElementById("cancelPostButton");
+    const submitPostButton = document.getElementById("submitPostButton");
+    const postTitleField = document.getElementById("postTitleField");
+    const postContentField = document.getElementById("postContentField");
 
-const postC = document.getElementById("Add");
+    cancelPostButton.addEventListener('click', function() {
+        event.preventDefault(); //for some reason, unless this line of code is here, the new forum post is deleted when the cancel button is clicked.
+        addPostForm.style.display = "none";
+        postTitleField.value = "Post Title";
+        postContentField.value = "Post Content";
+    });
 
-postC.addEventListener("click", createPost);
+    submitPostButton.addEventListener('click', function() {
+        event.preventDefault(); //for some reason, unless this line of code is here, the new forum post is deleted when the cancel button is clicked.
+        createPost(postTitleField.value, postContentField.value);
+        addPostForm.style.display = "none";
+        postTitleField.value = "Post Title";
+        postContentField.value = "Post Content";
+    });
+
+    addPostButton.addEventListener('click', function() {
+        addPostForm.style.display = "block";
+    });
 
 
-// Function will accept the query number of userId 
-function createPost(databasePostCount){
+    postC.addEventListener("click", createPost);
 
-    window.alert("U PUSHED THE BUTTON!!!");
 
-    for(var i = 0; i < 10; i++){
+    // Function will accept the query number of userId 
+    function createPost(postTitle, postContent /*, userImage*/){
+
         //document.write("<div class = 'ProfilePicContainer'><img class = 'UserPic' src = 'SpotifyDefaultProfilePic.jfif'/></div><h3 id = 'post'> Post Title </h3><div id = 'postContentContainer' > <p>Post Content</p></div><div id = 'postLike' > <p>Like</p> </div> <div id = 'postReply'><p> Reply</p> </div>");
 
         // THIS CREATES THE POST
@@ -237,34 +317,13 @@ function createPost(databasePostCount){
         var pContainer = document.createElement("div");
 
         // Set some content for the newDiv
-        pContainer.innerHTML = "<div class = 'postContainer'> <div class = 'ProfilePicContainer'><img class = 'UserPic' src = 'SpotifyDefaultProfilePic.jfif'/></div><h3 id = 'post'> Post Title </h3><div id = 'postContentContainer' > <p>Post Content</p></div><div id = 'postLike' > <p>Like</p> </div> <div id = 'postReply'><p> Reply</p> </div> </div>";
+        pContainer.innerHTML = "<div class = 'postContainer'> <div class = 'ProfilePicContainer'><img class = 'UserPic' src = 'SpotifyDefaultProfilePic.jfif'/></div><h3 id = 'post'>" + postTitle + "</h3><div id = 'postContentContainer' > <p>" + postContent + "</p></div><div id = 'postLike' > <p>Like</p> </div> <div id = 'postReply'><p> Reply</p> </div> </div>";
 
         // Add the new div to the container
         scrollContainer.appendChild(pContainer);
 
-
-        // THIS SECTION POPLATES THE POST TITLE
-        // Get a reference to the post title container
-        var postTitleContainer = document.getElementById("post");
-
-        postTitleContainer.innerHTML = "DABABY";
-        
-
-        // THIS SECTION POPULATES THE POST CONTENT
-        var postContentContainer = document.getElementById("postContentContainer");
-
-        postContentContainer.innerHTML = "He turns into a car!!";
-
-
         //THIS SECTION POPULATES THE USER IMAGE
         
-
-
-
-
-    }
-    
 }
-
 
 </script>
